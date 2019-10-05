@@ -1,0 +1,36 @@
+@import '../../../../theme/style.scss';
+
+.mail-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  border-bottom: 1px solid $white;
+
+  .mail {
+    height: 80px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &.blueBackground {
+      background-color: $blue-bg;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $gray;
+    }
+
+    .from {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .subject {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import '../../../../theme/style';
+
+.mail-content {
+  width: 100%;
+  padding: 40px;
+
+  .from {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .subject {
+    margin: 20px 0;
+  }
+
+  .mail {
+    height: 300px;
+    border-radius: 4px;
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    .mail-body {
+      height: 260px;
+      padding: 40px;
+      text-align: justify;
+    }
+
+    .mail-options {
+      height: 40px;
+      background-color: $gray;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .attach-button {
+        border: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .reply-button {
+        height: 40px;
+        background-color: $blue;
+        border: none;
+        padding: 6px 16px;
+        cursor: pointer;
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+}
