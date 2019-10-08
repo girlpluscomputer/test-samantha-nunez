@@ -26,8 +26,7 @@ const App = props => {
     filterBy,
   } = props;
   useEffect(() => {
-    // setInterval(fetchMails, 90000);
-    fetchMails();
+    setInterval(fetchMails, 90000);
   }, []);
 
   useEffect(() => {
@@ -94,19 +93,19 @@ const App = props => {
 };
 
 App.propTypes = {
-  fetchMails: PropTypes.func,
-  mails: PropTypes.array,
-  inboxMails: PropTypes.array,
-  spamMails: PropTypes.array,
-  deletedMails: PropTypes.array,
-  setActiveMail: PropTypes.object,
-  setInboxMails: PropTypes.func,
-  setSpamMails: PropTypes.func,
-  setDeletedMails: PropTypes.func,
-  setFilterBy: PropTypes.func,
-  activeMail: PropTypes.object,
-  setMails: PropTypes.func,
-  filterBy: PropTypes.string,
+  fetchMails: PropTypes.func.isRequired,
+  mails: PropTypes.array.isRequired,
+  inboxMails: PropTypes.array.isRequired,
+  spamMails: PropTypes.array.isRequired,
+  deletedMails: PropTypes.array.isRequired,
+  setActiveMail: PropTypes.object.isRequired,
+  setInboxMails: PropTypes.func.isRequired,
+  setSpamMails: PropTypes.func.isRequired,
+  setDeletedMails: PropTypes.func.isRequired,
+  setFilterBy: PropTypes.func.isRequired,
+  activeMail: PropTypes.object.isRequired,
+  setMails: PropTypes.func.isRequired,
+  filterBy: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = dispatch =>

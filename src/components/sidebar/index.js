@@ -72,12 +72,12 @@ const Sidebar = ({
 };
 
 Sidebar.PropTypes = {
-  inboxMails: PropTypes.array,
-  spamMails: PropTypes.array,
-  deletedMails: PropTypes.array,
-  showMail: PropTypes.func,
-  setFilterBy: PropTypes.func,
-  filterBy: PropTypes.string,
+  inboxMails: PropTypes.array.isRequired,
+  spamMails: PropTypes.array.isRequired,
+  deletedMails: PropTypes.array.isRequired,
+  showMail: PropTypes.func.isRequired,
+  setFilterBy: PropTypes.func.isRequired,
+  filterBy: PropTypes.string.isRequired,
 };
 
 export default Sidebar;

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=local webpack-dev-server --mode development --open --hot"
+    "start": "cross-env NODE_ENV=local webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
   },
   "author": "Samantha Nuñez",
   "license": "MIT",

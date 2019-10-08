@@ -17,7 +17,7 @@ const SearchBar = ({ searchMail }) => {
 };
 
 SearchBar.PropTypes = {
-  searchMail: PropTypes.func,
+  searchMail: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

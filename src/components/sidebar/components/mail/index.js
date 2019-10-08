@@ -40,8 +40,8 @@ const Mail = ({ mail, showMail }) => {
 };
 
 Mail.PropTypes = {
-  mail: PropTypes.object,
-  showMail: PropTypes.func,
+  mail: PropTypes.object.isRequired,
+  showMail: PropTypes.func.isRequired,
 };
 
 export default Mail;

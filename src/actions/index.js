@@ -1,4 +1,4 @@
-import api from '../server/api';
+import api from '../api';
 
 const ADD_MAIL = 'ADD_MAIL';
 const SET_ACTIVE_MAIL = 'SET_ACTIVE_MAIL';

@@ -39,9 +39,9 @@ const MailActions = ({ activeMail, setStatus, displaySidebar }) => {
 };
 
 MailActions.PropTypes = {
-  activeMail: PropTypes.object,
-  setStatus: PropTypes.func,
-  displaySidebar: PropTypes.func,
+  activeMail: PropTypes.object.isRequired,
+  setStatus: PropTypes.func.isRequired,
+  displaySidebar: PropTypes.func.isRequired,
 };
 
 export default MailActions;

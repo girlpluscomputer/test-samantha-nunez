@@ -25,9 +25,9 @@ const Header = ({ setFilterBy, filterBy, notifications }) => {
 };
 
 Header.PropTypes = {
-  setFilterBy: PropTypes.func,
-  filterBy: PropTypes.string,
-  notifications: PropTypes.number,
+  setFilterBy: PropTypes.func.isRequired,
+  filterBy: PropTypes.string.isRequired,
+  notifications: PropTypes.number.isRequired,
 };
 
 export default Header;
