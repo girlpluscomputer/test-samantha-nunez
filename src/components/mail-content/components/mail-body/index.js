@@ -25,7 +25,11 @@ const MailBody = ({ activeMail }) => {
   );
 };
 
-MailBody.PropTypes = {
+// MailBody.defaultProps = {
+//   activeMail: null,
+// };
+
+MailBody.propTypes = {
   activeMail: PropTypes.object.isRequired,
 };
 

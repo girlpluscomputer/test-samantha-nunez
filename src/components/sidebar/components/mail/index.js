@@ -39,7 +39,7 @@ const Mail = ({ mail, showMail }) => {
   );
 };
 
-Mail.PropTypes = {
+Mail.propTypes = {
   mail: PropTypes.object.isRequired,
   showMail: PropTypes.func.isRequired,
 };

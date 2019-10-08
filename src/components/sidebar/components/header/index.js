@@ -15,7 +15,7 @@ const Header = ({ setFilterBy, filterBy, notifications }) => {
         onChange={event => setFilterBy(event.target.value)}
         value={filterBy}
       >
-        <option>Filter by</option>
+        <option value="default">Filter by</option>
         <option value="inbox">Inbox</option>
         <option value="spam">Spam</option>
         <option value="deleted">Deleted</option>
@@ -24,7 +24,7 @@ const Header = ({ setFilterBy, filterBy, notifications }) => {
   );
 };
 
-Header.PropTypes = {
+Header.propTypes = {
   setFilterBy: PropTypes.func.isRequired,
   filterBy: PropTypes.string.isRequired,
   notifications: PropTypes.number.isRequired,

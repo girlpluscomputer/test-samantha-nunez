@@ -35,7 +35,7 @@ const MailContent = ({ activeMail, setStatus, displaySidebar }) => {
   );
 };
 
-MailContent.PropTypes = {
+MailContent.propTypes = {
   activeMail: PropTypes.object.isRequired,
   setStatus: PropTypes.func.isRequired,
   displaySidebar: PropTypes.func.isRequired,

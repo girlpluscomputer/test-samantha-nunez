@@ -71,7 +71,7 @@ const Sidebar = ({
   );
 };
 
-Sidebar.PropTypes = {
+Sidebar.propTypes = {
   inboxMails: PropTypes.array.isRequired,
   spamMails: PropTypes.array.isRequired,
   deletedMails: PropTypes.array.isRequired,

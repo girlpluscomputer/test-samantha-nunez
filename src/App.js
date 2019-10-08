@@ -26,6 +26,7 @@ const App = props => {
     filterBy,
   } = props;
   useEffect(() => {
+    fetchMails();
     setInterval(fetchMails, 90000);
   }, []);
 
@@ -87,6 +88,7 @@ const App = props => {
         activeMail={activeMail}
         setStatus={setStatus}
         displaySidebar={displaySidebar}
+        filterBy={filterBy}
       />
     </div>
   );
@@ -98,7 +100,7 @@ App.propTypes = {
   inboxMails: PropTypes.array.isRequired,
   spamMails: PropTypes.array.isRequired,
   deletedMails: PropTypes.array.isRequired,
-  setActiveMail: PropTypes.object.isRequired,
+  setActiveMail: PropTypes.func.isRequired,
   setInboxMails: PropTypes.func.isRequired,
   setSpamMails: PropTypes.func.isRequired,
   setDeletedMails: PropTypes.func.isRequired,
