@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import Header from './components/header';
 import Mail from './components/mail';
@@ -15,14 +16,16 @@ const Sidebar = ({
   filterBy,
 }) => {
   const [mails, setMails] = useState([]);
+  const [notifications, setNotifications] = useState(0);
 
   useEffect(() => {
-    setMails(inboxMails);
-  }, [inboxMails]);
-
-  useEffect(() => {
-    showCorrectEmails();
+    showCorrectMails();
   }, [filterBy]);
+
+  useEffect(() => {
+    showCorrectMails();
+    setNotifications(inboxMails.length);
+  }, [inboxMails]);
 
   const searchMail = event => {
     const {
@@ -33,11 +36,11 @@ const Sidebar = ({
     if (value.length > 0) {
       setMails(filteredMails);
     } else {
-      showCorrectEmails();
+      showCorrectMails();
     }
   };
 
-  const showCorrectEmails = () => {
+  const showCorrectMails = () => {
     switch (filterBy) {
       case 'spam':
         setMails(spamMails);
@@ -53,7 +56,11 @@ const Sidebar = ({
 
   return (
     <div className="sidebar" id="sidebar">
-      <Header setFilterBy={setFilterBy} filterBy={filterBy} />
+      <Header
+        setFilterBy={setFilterBy}
+        filterBy={filterBy}
+        notifications={notifications}
+      />
       <SearchBar searchMail={searchMail} />
       <div className="mail-list-container">
         {mails.map(mail => {
@@ -62,6 +69,15 @@ const Sidebar = ({
       </div>
     </div>
   );
+};
+
+Sidebar.PropTypes = {
+  inboxMails: PropTypes.array,
+  spamMails: PropTypes.array,
+  deletedMails: PropTypes.array,
+  showMail: PropTypes.func,
+  setFilterBy: PropTypes.func,
+  filterBy: PropTypes.string,
 };
 
 export default Sidebar;

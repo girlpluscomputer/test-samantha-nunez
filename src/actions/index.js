@@ -13,7 +13,7 @@ const SET_SPAM_MAILS = 'SET_SPAM_MAILS';
 export const fetchMails = () => async dispatch => {
   try {
     let uuidv4 = '';
-    const response = await api.get('https://api.myjson.com/bins/sexnz');
+    const response = await api.get('https://api.myjson.com/bins/1g23pv');
     const mails = await response.data;
     mails.map(mail => {
       uuidv4 = require('uuid/v4');

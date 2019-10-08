@@ -5,6 +5,7 @@ const initialState = {
   spamMails: [],
   deletedMails: [],
   filterBy: 'inbox',
+  displayMail: false,
 };
 
 const mailsReducer = (state = initialState, action) => {

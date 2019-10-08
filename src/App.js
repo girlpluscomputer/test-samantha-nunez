@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as todoActions from './actions';
@@ -25,13 +26,17 @@ const App = props => {
     filterBy,
   } = props;
   useEffect(() => {
-    // setInterval(fetchMails, 500);
+    // setInterval(fetchMails, 90000);
     fetchMails();
   }, []);
 
   useEffect(() => {
     updateMails(mails);
   }, [mails]);
+
+  useEffect(() => {
+    setActiveMail({});
+  }, [filterBy]);
 
   const updateMails = mails => {
     const spamMails = mails.filter(mail => mail.isSpam);
@@ -51,6 +56,12 @@ const App = props => {
     if (!mail.isReaded) {
       setStatus(id, 'isReaded', true);
     }
+
+    document.getElementById('sidebar').style.display = 'none';
+  };
+
+  const displaySidebar = () => {
+    document.getElementById('sidebar').style.display = 'block';
   };
 
   const setStatus = (mailId, status, value) => {
@@ -73,9 +84,29 @@ const App = props => {
         filterBy={filterBy}
         setFilterBy={setFilterBy}
       />
-      <MailContent activeMail={activeMail} setStatus={setStatus} />
+      <MailContent
+        activeMail={activeMail}
+        setStatus={setStatus}
+        displaySidebar={displaySidebar}
+      />
     </div>
   );
+};
+
+App.propTypes = {
+  fetchMails: PropTypes.func,
+  mails: PropTypes.array,
+  inboxMails: PropTypes.array,
+  spamMails: PropTypes.array,
+  deletedMails: PropTypes.array,
+  setActiveMail: PropTypes.object,
+  setInboxMails: PropTypes.func,
+  setSpamMails: PropTypes.func,
+  setDeletedMails: PropTypes.func,
+  setFilterBy: PropTypes.func,
+  activeMail: PropTypes.object,
+  setMails: PropTypes.func,
+  filterBy: PropTypes.string,
 };
 
 const mapDispatchToProps = dispatch =>

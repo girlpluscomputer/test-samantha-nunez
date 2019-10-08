@@ -1,8 +1,15 @@
 @import '../../theme/style.scss';
 
 .mail-content-container {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+
+  .no-mail-selected {
+    font-size: 16px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media only screen and(max-width: 768px) {
     width: 100%;

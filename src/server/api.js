@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class Api {
   constructor() {
-    this.baseUrl = 'https://api.myjson.com/bins/cx66v';
+    this.baseUrl = 'https://api.myjson.com/bins/1g23pv';
 
     const axiosConfig = {
       baseURL: this.baseUrl,

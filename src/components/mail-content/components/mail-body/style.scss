@@ -2,7 +2,11 @@
 
 .mail-content {
   width: 100%;
-  padding: 40px;
+  padding: 80px;
+
+  @media only screen and(max-width: $small-mobile) {
+    padding: 30px;
+  }
 
   .from {
     margin-bottom: 20px;
@@ -22,7 +26,7 @@
 
     .mail-body {
       height: 260px;
-      padding: 40px;
+      padding: 30px;
       text-align: justify;
     }
 
@@ -52,6 +56,11 @@
         color: $white;
         font-weight: bold;
       }
+    }
+
+    .attachement-container {
+      width: 100%;
+      background-color: green;
     }
   }
 }

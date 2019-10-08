@@ -12,12 +12,30 @@
     width: 100%;
     padding: 10px 20px;
     background-color: $white;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .mailMark {
+      height: 100%;
+      width: 5px;
+      position: absolute;
+      background-color: $blue-bg;
+      top: 0;
+      left: 0;
+
+      &.blue {
+        background-color: $blue;
+      }
+    }
 
     &.blueBackground {
       background-color: $blue-bg;
+
+      .from {
+        color: $blue;
+      }
     }
 
     &:hover {
@@ -25,12 +43,37 @@
       background-color: $gray;
     }
 
-    .from {
-      font-size: 14px;
-      font-weight: bold;
+    .mail-text {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .from {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .subject {
+        font-size: 12px;
+      }
     }
-    .subject {
-      font-size: 12px;
+
+    .information {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .date {
+        font-size: 12px;
+      }
+
+      .attach-icon {
+        text-align: end;
+
+        svg {
+          transform: rotate(45deg);
+        }
+      }
     }
   }
 }

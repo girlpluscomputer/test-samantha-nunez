@@ -1,10 +1,20 @@
-import React from 'react';
-import BaselineAttachFile from 'react-md-icon/dist/BaselineAttachFile';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
+import BaselineAttachFile from 'react-md-icon/dist/BaselineAttachFile';
+import Mail from '../../../sidebar/components/mail';
+
 const MailBody = ({ activeMail }) => {
-  const { from, subject, body } = activeMail;
+  const { from, subject, body, attachements } = activeMail;
+  // const [attachedFiles, setAttachedFiles] = useState([]);
+
+  // useEffect(() => {
+  //   if (Object.keys(activeMail).length > 0) {
+  //     setAttachedFiles(attachements[0]);
+  //   }
+  // }, [activeMail]);
 
   return (
     <div className="mail-content">
@@ -21,6 +31,10 @@ const MailBody = ({ activeMail }) => {
       </div>
     </div>
   );
+};
+
+MailBody.PropTypes = {
+  activeMail: PropTypes.object,
 };
 
 export default MailBody;
